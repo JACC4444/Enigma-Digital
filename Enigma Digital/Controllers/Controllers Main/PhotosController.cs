@@ -17,8 +17,18 @@ namespace Enigma_Digital.Controllers.Controllers_Main
         // GET: Photos
         public ActionResult Index()
         {
-            var photos = db.Photos.Include(p => p.Tipo);
-            return View(photos.ToList());
+            if (!User.IsInRole("Admin"))
+            {
+                var photos = db.Photos.Where(x => x.User == User.Identity.Name).Include(p => p.Tipo);
+                return View(photos.ToList());
+
+            }
+            else
+            {
+                var photos = db.Photos.Include(p => p.Tipo);
+                return View(photos.ToList());
+            }
+
         }
 
         // GET: Photos/Details/5

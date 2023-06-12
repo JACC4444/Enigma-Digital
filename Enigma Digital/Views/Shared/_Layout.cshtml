@@ -21,12 +21,6 @@
                 @Html.ActionLink("Nombre de la aplicación", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Fotos", "Index", "Photos")</li>
-                    <li>@Html.ActionLink("Comentarios", "Index", "Comentarios")</li>
-                    <li>@Html.ActionLink("Categorias", "Index", "Tipoes")</li>
-                </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
